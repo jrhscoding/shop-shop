@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
+import { idbPromise } from "../../utils/helpers"
 import CartItem from "../CartItem";
 import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
-import { idbPromise } from '../../utils/helpers';
 import "./style.css";
 
 const Cart = () => {
@@ -59,20 +59,20 @@ const Cart = () => {
               Auth.loggedIn() ?
                 <button>
                   Checkout
-                </button>
+              </button>
                 :
                 <span>(log in to check out)</span>
             }
           </div>
         </div>
       ) : (
-        <h3>
-          <span role="img" aria-label="shocked">
-            😱
+          <h3>
+            <span role="img" aria-label="shocked">
+              😱
           </span>
           You haven't added anything to your cart yet!
-        </h3>
-      )}
+          </h3>
+        )}
     </div>
   );
 };
